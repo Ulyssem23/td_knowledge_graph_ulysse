@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+neo4j
+psycopg-binary
+pandas
+python-dotenv
+psycopg
