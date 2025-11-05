@@ -1,0 +1,13 @@
+Recommendation strategy:
+We could start with item-based collaborative filtering on the graph -> link products co-purchased in the same
+orders and score candidates by co-occurrence (or Jaccard over customer sets). For users with sparse history,
+we can also use personalized PageRank seeded on their viewed/bought items to find related products through categories
+and co-purchase paths.
+
+Production ready code:
+Data handling should be made robust with ETL processes that safely upsert data without duplication,
+schema migrations to handle structure changes, and proper indexing and validation for data integrity.
+Regular scheduled jobs or change data capture can keep the graph synchronized with transactional systems.
+
+Security should follow best practices: store secrets in a secure vault, enforce least-privilege database access,
+enable TLS encryption, sanitize user inputs, and apply rate limiting.
