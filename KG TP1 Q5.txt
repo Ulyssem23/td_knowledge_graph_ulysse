@@ -1,0 +1,9 @@
+Why using merge and not create ?
+
+We use MERGE instead of CREATE because using CREATE will always create new data, whereas MERGE will keep on using the data that
+we currently have at hand.
+
+Also, MERGE checks for duplicates and also finds existing patterns, which ensures graph integrity and prevents us from randomly
+duplicating data that we don't need.
+
+Overall, we use MERGE and not CREATE because MERGE keeps the graph clean and reuces complexity.
